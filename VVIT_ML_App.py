@@ -9,7 +9,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 # ------------------------------
 # Title
 # ------------------------------
-st.image("")
+st.image("PragyanAI_Transperent.png")
 st.title("🚕 PragyanAI Taxi Fare Prediction App (End-to-End ML)")
 
 # ------------------------------
