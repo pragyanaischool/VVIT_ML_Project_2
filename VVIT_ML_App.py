@@ -104,7 +104,15 @@ if st.button("🚀 Predict Fare"):
 # ------------------------------
 st.subheader("📉 Distance vs Fare")
 
-st.line_chart(df[['distance', 'fare']])
+chart_df = df[['distance', 'fare']].copy()
+
+# Ensure numeric types (very important)
+chart_df = chart_df.apply(pd.to_numeric, errors='coerce')
+
+# Drop invalid values
+chart_df = chart_df.dropna()
+
+st.line_chart(chart_df)
 
 # ------------------------------
 # Step 9: Insights
