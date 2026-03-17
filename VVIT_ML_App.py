@@ -19,6 +19,7 @@ st.title("🚕 PragyanAI Taxi Fare Prediction App (End-to-End ML)")
 def load_data():
     url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/taxis.csv"
     df = pd.read_csv(url)
+    df = df.convert_dtypes()
     return df
 
 df = load_data()
