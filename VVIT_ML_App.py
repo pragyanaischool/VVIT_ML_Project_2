@@ -10,7 +10,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 # Title
 # ------------------------------
 st.image("PragyanAI_Transperent.png")
-st.title("🚕 PragyanAI Taxi Fare Prediction App (End-to-End ML)")
+st.title(" PragyanAI Taxi Fare Prediction App (End-to-End ML) ")
 
 # ------------------------------
 # Step 1: Load Dataset
@@ -91,7 +91,7 @@ hour = st.number_input(
 # ------------------------------
 # Step 7: Prediction
 # ------------------------------
-if st.button("🚀 Predict Fare"):
+if st.button(" Predict Fare "):
     
     input_data = np.array([[distance]])
     
