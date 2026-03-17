@@ -32,7 +32,9 @@ st.subheader("PragyanAI Dataset Preview")
 # Step 2: Data Preprocessing
 # ------------------------------
 df = df[['distance', 'fare']].dropna()
-
+# Force numeric conversion for key columns
+df['distance'] = pd.to_numeric(df['distance'], errors='coerce')
+df['fare'] = pd.to_numeric(df['fare'], errors='coerce')
 X = df[['distance']]
 y = df['fare']
 
