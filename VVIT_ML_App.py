@@ -20,6 +20,7 @@ def load_data():
     url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/taxis.csv"
     df = pd.read_csv(url)
     df = df.convert_dtypes()
+    st.write(df.head())   # instead of st.dataframe(df)
     return df
 
 df = load_data()
