@@ -25,9 +25,9 @@ def load_data():
 
 df = load_data()
 
-st.subheader("📊 Dataset Preview")
-st.dataframe(df.head())
-
+st.subheader("PragyanAI Dataset Preview")
+#st.dataframe(df.head())
+#st.write(df.head()) 
 # ------------------------------
 # Step 2: Data Preprocessing
 # ------------------------------
