@@ -104,6 +104,8 @@ if st.button("🚀 Predict Fare"):
 # ------------------------------
 st.subheader("📉 Distance vs Fare")
 
+df = df.infer_objects(copy=False)
+
 chart_df = df[['distance', 'fare']].copy()
 
 # Ensure numeric types (very important)
