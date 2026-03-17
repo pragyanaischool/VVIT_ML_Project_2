@@ -104,17 +104,28 @@ if st.button("🚀 Predict Fare"):
 # ------------------------------
 st.subheader("📉 Distance vs Fare")
 
-df = df.infer_objects(copy=False)
-
+# Create clean copy
 chart_df = df[['distance', 'fare']].copy()
 
-# Ensure numeric types (very important)
-chart_df = chart_df.apply(pd.to_numeric, errors='coerce')
+# Convert EVERYTHING safely to numeric
+chart_df['distance'] = pd.to_numeric(chart_df['distance'], errors='coerce')
+chart_df['fare'] = pd.to_numeric(chart_df['fare'], errors='coerce')
 
-# Drop invalid values
+# Drop invalid rows
 chart_df = chart_df.dropna()
 
-st.line_chart(chart_df)
+# Reset index (important!)
+chart_df = chart_df.reset_index(drop=True)
+
+# Plot using matplotlib (NO Arrow dependency)
+fig, ax = plt.subplots()
+
+ax.scatter(chart_df['distance'], chart_df['fare'])
+ax.set_xlabel("Distance")
+ax.set_ylabel("Fare")
+ax.set_title("Distance vs Fare")
+
+st.pyplot(fig)
 
 # ------------------------------
 # Step 9: Insights
